@@ -4,91 +4,42 @@
   <meta charset="UTF-8">
   <title>Products | BagSphere</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header class="header">
-  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
-  <img src="Images/logo.png" class="logo" alt="BagSphere Logo">
+  <img src="Images/logo.png" class="logo">
   <p class="tagline">Trust • Style • Durability</p>
   <nav class="nav">
     <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
+    <a href="products.html" class="active">Products</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<!-- BREADCRUMB -->
-<div class="container breadcrumb">
-  <a href="index.html">Home</a> ›
-  <span>Products</span>
-</div>
-
-<!-- PRODUCT GRID -->
 <section class="products">
-  <div class="container">
-    <h3 class="section-title">All Products</h3>
+  <h3 class="section-title">Our Products</h3>
 
-    <div class="product-grid">
+  <div class="product-grid">
+    <a href="product-suitcase.html" class="product-card">
+      <img src="Images/suitcase.jpg">
+      <h3>Hard Shell Suitcase</h3>
+      <p class="price">₹2,999</p>
+    </a>
 
-      <!-- PRODUCT 1 -->
-      <a href="product-suitcase.html" class="product-card">
-        <img src="Images/suitcase.jpg" alt="Hard Shell Suitcase">
-        <h4>Hard Shell Suitcase</h4>
-        <p>Lightweight • Secure Lock</p>
-        <span>₹2,999</span>
-      </a>
-
-      <!-- PRODUCT 2 -->
-      <a href="product-backpack1.html" class="product-card">
-        <img src="Images/backpack1.jpg" alt="Tracker Adventure Backpack">
-        <h4>Tracker Adventure Backpack</h4>
-        <p>High quality fabric • Comfortable</p>
-        <span>₹689</span>
-      </a>
-
-      <!-- PRODUCT 3 -->
-      <a href="product-backpack2.html" class="product-card">
-        <img src="Images/backpack2.jpg" alt="Urban Travel Backpack">
-        <h4>Urban Travel Backpack</h4>
-        <p>Stylish • Durable • Water Resistant</p>
-        <span>₹789</span>
-      </a>
-
-    </div>
+    <a href="product-backpack1.html" class="product-card">
+      <img src="Images/backpack1.jpg">
+      <h3>Adventure Backpack</h3>
+      <p class="price">₹689</p>
+    </a>
   </div>
 </section>
 
-<!-- TRUST SECTION -->
-<section class="trust">
-  <div class="container trust-grid">
-    <div>✔ Lightweight & Durable</div>
-    <div>✔ Secure Locks</div>
-    <div>✔ Water Resistant</div>
-    <div>✔ 3 Year Warranty</div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer class="footer">
-  <div class="container">
-    <h4>BagSphere</h4>
-    <p>Premium Bags & Luggage</p>
-    <p>📞 Contact: <strong>8777438644</strong></p>
-    <p>© 2025 BagSphere</p>
-  </div>
+  <p>© 2025 BagSphere</p>
 </footer>
 
-<!-- WHATSAPP FLOAT BUTTON -->
-<a href="https://wa.me/918777438644" class="whatsapp-btn" target="_blank">
-  💬 Buy on WhatsApp
-</a>
-
-<script src="script.js"></script>
 </body>
 </html>

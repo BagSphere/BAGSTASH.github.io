@@ -1,39 +1,14 @@
-// =========================
-// PRODUCT MODAL
-// =========================
-function openModal(img, title, desc, price) {
-    const modal = document.getElementById("productModal");
-    document.getElementById("modalImg").src = img;
-    document.getElementById("modalTitle").innerText = title;
-    document.getElementById("modalDesc").innerText = desc;
-    document.getElementById("modalPrice").innerText = price;
-    modal.style.display = "flex";
-}
+function filterProducts() {
+  const category = document.getElementById("categoryFilter").value;
+  const price = document.getElementById("priceFilter").value;
 
-function closeModal() {
-    const modal = document.getElementById("productModal");
-    modal.style.display = "none";
-}
+  document.querySelectorAll(".product-card").forEach(card => {
+    const matchCategory =
+      category === "all" || card.dataset.category === category;
 
-// Close modal when clicking outside content
-window.onclick = function(event) {
-    const modal = document.getElementById("productModal");
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-}
+    const matchPrice =
+      price === "all" || card.dataset.price === price;
 
-// =========================
-// THEME TOGGLE
-// =========================
-function toggleTheme() {
-    document.body.classList.toggle("dark");
-}
-
-// =========================
-// IMAGE SWITCH (for product pages)
-// =========================
-function changeImg(src) {
-    const mainImg = document.getElementById("mainImg");
-    if (mainImg) mainImg.src = src;
+    card.style.display = matchCategory && matchPrice ? "block" : "none";
+  });
 }

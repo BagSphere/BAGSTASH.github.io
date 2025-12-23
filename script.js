@@ -1,29 +1,34 @@
-/* REVEAL ON SCROLL */
-function reveal() {
-  document.querySelectorAll(".reveal").forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight - 80) {
-      el.classList.add("active");
-    }
-  });
-}
-window.addEventListener("scroll", reveal);
-window.addEventListener("load", reveal);
+// Skeleton loader
+window.onload = () => {
+  setTimeout(() => {
+    document.getElementById("skeleton").style.display = "none";
+    document.getElementById("productGrid").classList.remove("hidden");
+  }, 1500);
+};
 
-/* PRODUCT FILTER */
-function filterProducts() {
-  const val = document.getElementById("filter").value;
-  document.querySelectorAll(".product-card").forEach(card => {
+// Product filter
+function filterProducts(type) {
+  const cards = document.querySelectorAll(".product-card");
+  cards.forEach(card => {
     card.style.display =
-      val === "all" || card.dataset.cat === val ? "block" : "none";
+      type === "all" || card.classList.contains(type)
+        ? "block"
+        : "none";
   });
 }
 
-/* IMAGE SWITCH */
-function changeImg(src) {
-  document.getElementById("mainImg").src = src;
-}
-
-/* SKELETON LOADER */
-window.addEventListener("load", () => {
-  document.querySelectorAll(".skeleton").forEach(s => s.remove());
+// PWA Install
+let deferredPrompt;
+window.addEventListener("beforeinstallprompt", e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById("installPopup").style.display = "block";
 });
+
+document.getElementById("installBtn")?.addEventListener("click", () => {
+  deferredPrompt.prompt();
+});
+
+function closeInstall() {
+  document.getElementById("installPopup").style.display = "none";
+}

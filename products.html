@@ -1,10 +1,51 @@
-<select id="filter" onchange="filterProducts()">
-  <option value="all">All</option>
-  <option value="suitcase">Suitcase</option>
-  <option value="backpack">Backpack</option>
-</select>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Products | BagSphere</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<div class="product-grid">
-  <a class="product-card" data-cat="suitcase" href="product-suitcase.html">...</a>
-  <a class="product-card" data-cat="backpack" href="product-backpack1.html">...</a>
+<header class="header">
+  <img src="Images/logo.png" class="logo">
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="filter-bar">
+  <button onclick="filter('all')">All</button>
+  <button onclick="filter('suitcase')">Suitcase</button>
+  <button onclick="filter('backpack')">Backpack</button>
 </div>
+
+<section class="products">
+  <div class="product-grid">
+
+    <div class="product-card suitcase">
+      <img src="Images/suitcase.jpg">
+      <h4>Hard Shell Suitcase</h4>
+      <span>₹2,999</span>
+    </div>
+
+    <div class="product-card backpack">
+      <img src="Images/backpack1.jpg">
+      <h4>Adventure Backpack</h4>
+      <span>₹689</span>
+    </div>
+
+    <div class="product-card backpack">
+      <img src="Images/backpack2.jpg">
+      <h4>Urban Backpack</h4>
+      <span>₹789</span>
+    </div>
+
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -2,21 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Tracker Adventure Backpack | BagSphere</title>
+  <title>Adventure Backpack | BagSphere</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header class="header">
-  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
-  <img src="Images/logo.png" class="logo" alt="BagSphere Logo">
-  <p class="tagline">Trust • Style • Durability</p>
-
+  <img src="Images/logo.png" class="logo">
   <nav class="nav">
     <a href="index.html">Home</a>
     <a href="products.html">Products</a>
@@ -24,106 +18,19 @@
   </nav>
 </header>
 
-<!-- BREADCRUMB -->
-<div class="container breadcrumb">
-  <a href="index.html">Home</a> ›
-  <a href="products.html">Products</a> ›
-  <span>Tracker Adventure Backpack</span>
-</div>
-
-<!-- PRODUCT DETAIL -->
 <section class="products">
-  <div class="container product-detail">
-
-    <!-- IMAGE GALLERY -->
-    <div class="product-image">
-      <img id="mainImg" src="Images/backpack1.jpg" alt="Tracker Adventure Backpack">
-
-      <div class="thumbs">
-        <img src="Images/backpack1.jpg" onclick="changeImg(this.src)">
-        <img src="Images/backpack2.jpg" onclick="changeImg(this.src)">
-        <img src="Images/backpack3.jpg" onclick="changeImg(this.src)">
-      </div>
-    </div>
-
-    <!-- PRODUCT INFO -->
-    <div class="product-info">
-      <h2>Tracker Adventure Backpack</h2>
-
-      <div class="rating">
-        ⭐⭐⭐⭐⭐ <span>(98 reviews)</span>
-      </div>
-
-      <p class="price">₹689</p>
-
-      <p class="desc">
-        Premium backpack made for adventure and travel. Comfortable straps and multiple compartments for organized storage.
-      </p>
-
-      <ul class="features">
-        <li>✔ High-quality Fabric</li>
-        <li>✔ Ergonomic Design</li>
-        <li>✔ Multiple Compartments</li>
-        <li>✔ Water Resistant</li>
-      </ul>
-
-      <!-- SPEC TABLE -->
-      <table class="specs">
-        <tr><td>Capacity</td><td>35 Liters</td></tr>
-        <tr><td>Material</td><td>Polyester</td></tr>
-        <tr><td>Weight</td><td>1.2 kg</td></tr>
-        <tr><td>Warranty</td><td>2 Years</td></tr>
-      </table>
-
-      <!-- BUY BUTTONS -->
-      <div class="buy-buttons">
-        <a href="upi://pay?pa=bagsphere@ybl&pn=BagSphere&am=689&cu=INR"
-           class="btn">Pay via UPI</a>
-
-        <a href="https://wa.me/918777438644?text=I want to buy Tracker Adventure Backpack for ₹689"
-           class="btn whatsapp" target="_blank">
-           Order on WhatsApp
-        </a>
-      </div>
-    </div>
-
+  <div class="product-card">
+    <img src="Images/backpack1.jpg">
+    <h3>Adventure Backpack</h3>
+    <p class="price">₹689</p>
+    <p>✔ Water Resistant<br>✔ Laptop Compartment<br>✔ Lightweight</p>
+    <a href="https://wa.me/916291083811" class="wa-btn">Buy on WhatsApp</a>
   </div>
 </section>
 
-<!-- TRUST SECTION -->
-<section class="trust">
-  <div class="container trust-grid">
-    <div>✔ 2 Year Warranty</div>
-    <div>✔ Comfortable Straps</div>
-    <div>✔ Durable & Lightweight</div>
-    <div>✔ Water Resistant</div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer class="footer">
-  <div class="container">
-    <h4>BagSphere</h4>
-    <p>Premium Bags & Luggage</p>
-    <p>📞 8777438644</p>
-    <p>© 2025 BagSphere</p>
-  </div>
+  <p>© 2025 BagSphere</p>
 </footer>
-
-<!-- WHATSAPP FLOAT BUTTON -->
-<a href="https://wa.me/918777438644" class="whatsapp-btn" target="_blank">
-  💬 Buy on WhatsApp
-</a>
-
-<script src="script.js"></script>
-
-<!-- IMAGE SWITCH SCRIPT -->
-<script>
-function changeImg(src) {
-  document.getElementById("mainImg").src = src;
-}
-</script>
 
 </body>
 </html>
-

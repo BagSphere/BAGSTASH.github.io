@@ -1,9 +1,17 @@
+/* =========================
+   ROOT VARIABLES
+========================= */
 :root {
   --primary: #1f7ae0;
   --whatsapp: #25d366;
   --dark: #020617;
+  --bg: #f8fafc;
+  --text: #1e293b;
 }
 
+/* =========================
+   RESET & BASE
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -12,108 +20,129 @@
 }
 
 body {
-  background: #f8fafc;
-  color: #1e293b;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 .header {
   text-align: center;
-  padding: 16px;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  padding: 16px 12px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
 }
 
 .logo {
   width: 160px;
+  margin-bottom: 6px;
 }
 
 .tagline {
   font-size: 13px;
   color: var(--primary);
+  margin-bottom: 6px;
 }
 
 .nav a {
   margin: 0 12px;
   text-decoration: none;
-  color: #1e293b;
+  color: var(--text);
   font-weight: 500;
+  font-size: 15px;
 }
 
-/* CONTACT BAR */
+/* =========================
+   CONTACT BAR
+========================= */
 .contact-bar {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
-  padding: 10px;
+  padding: 12px;
   background: #e0f2fe;
   flex-wrap: wrap;
 }
 
-.call-btn,
-.wa-btn {
-  padding: 8px 14px;
-  border-radius: 20px;
+.contact-bar a {
   text-decoration: none;
+  color: #ffffff;
   font-weight: 600;
   font-size: 14px;
-}
-
-.call-btn {
-  background: var(--primary);
-  color: white;
-  animation: pulse 1.5s infinite;
-}
-
-.wa-btn {
-  background: var(--whatsapp);
-  color: white;
+  padding: 10px 16px;
+  border-radius: 25px;
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.wa-btn img {
-  width: 18px;
+.call-btn {
+  background: var(--primary);
+  animation: pulse 1.5s infinite;
 }
 
-/* HERO */
+.wa-btn {
+  background: var(--whatsapp);
+}
+
+.wa-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
 .hero {
   height: 80vh;
-  background: linear-gradient(rgba(10,37,64,.7), rgba(10,37,64,.7)),
-              url("Images/banner.jpg") center/cover no-repeat;
+  background:
+    linear-gradient(rgba(10,37,64,.7), rgba(10,37,64,.7)),
+    url("Images/banner.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: #ffffff;
+}
+
+.hero-content {
+  padding: 0 20px;
 }
 
 .hero h2 {
-  font-size: 34px;
+  font-size: 36px;
+  line-height: 1.2;
 }
 
 .hero p {
-  margin: 15px 0;
+  margin: 14px 0 20px;
+  font-size: 16px;
+  color: #e0f2fe;
 }
 
 .btn {
   background: var(--primary);
   padding: 12px 28px;
   border-radius: 30px;
-  color: white;
+  color: #ffffff;
   text-decoration: none;
+  font-weight: 600;
 }
 
-/* PRODUCTS */
+/* =========================
+   PRODUCTS
+========================= */
 .products {
   padding: 60px 20px;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 30px;
   font-size: 26px;
+  margin-bottom: 30px;
 }
 
 .product-grid {
@@ -123,11 +152,11 @@ body {
 }
 
 .product-card {
-  background: white;
-  padding: 15px;
-  border-radius: 14px;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 16px;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
 }
 
 .product-card img {
@@ -136,12 +165,18 @@ body {
   object-fit: contain;
 }
 
+.product-card h4 {
+  margin: 12px 0 6px;
+}
+
 .product-card span {
   color: var(--primary);
   font-weight: 600;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 .footer {
   background: var(--dark);
   color: #cbd5f5;
@@ -154,7 +189,9 @@ body {
   text-decoration: none;
 }
 
-/* FLOATING WHATSAPP */
+/* =========================
+   FLOATING WHATSAPP
+========================= */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -163,333 +200,51 @@ body {
   padding: 12px;
   border-radius: 50%;
   box-shadow: 0 6px 15px rgba(0,0,0,.3);
+  z-index: 999;
 }
 
 .whatsapp-float img {
   width: 26px;
+  height: 26px;
 }
 
-/* CLICK ANIMATION */
+/* =========================
+   ANIMATIONS
+========================= */
 @keyframes pulse {
   0% { transform: scale(1); }
-  50% { transform: scale(1.07); }
+  50% { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
 
-/* MOBILE OPTIMIZATION */
+/* =========================
+   MOBILE FIXES
+========================= */
 @media (max-width: 600px) {
-  .hero h2 { font-size: 26px; }
-  .contact-bar { flex-direction: column; }
-}    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
 
-.hero-content {
-    text-align: center;
-    animation: slideUp 1s ease;
-}
+  .logo {
+    width: 130px;
+  }
 
-@keyframes slideUp {
-    from { transform: translateY(40px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-.hero-content h2 {
-    font-size: 48px;
-    line-height: 1.2;
-}
-
-.hero-content p {
-    margin: 20px 0;
-    font-size: 18px;
-    color: #e0f2fe;
-}
-
-.btn {
-    display: inline-block;
-    background: var(--primary);
-    padding: 14px 32px;
-    border-radius: 30px;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(31,122,224,0.4);
-}
-
-/* =========================
-   PRODUCTS
-========================= */
-.products {
-    padding: 80px 0;
-    animation: scrollFade 1s ease forwards;
-}
-
-@keyframes scrollFade {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.section-title {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 50px;
-    color: var(--text);
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-}
-
-.product-card {
-    background: var(--card);
-    border-radius: 18px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 40px rgba(0,0,0,0.15);
-}
-
-.product-card img {
-    width: 100%;
-    height: 260px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.product-card:hover img {
-    transform: scale(1.05);
-}
-
-.product-card h4 {
-    margin: 15px 0 5px;
-    color: var(--text);
-}
-
-.product-card p {
+  .nav a {
+    margin: 0 8px;
     font-size: 14px;
-    color: #475569;
-}
+  }
 
-.product-card span {
-    display: block;
-    margin-top: 10px;
-    font-weight: 600;
-    color: var(--primary);
-}
+  .hero {
+    height: 70vh;
+  }
 
-/* =========================
-   PRODUCT DETAIL
-========================= */
-.product-detail {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 40px;
-}
+  .hero h2 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
 
-.product-image {
-    flex: 1 1 400px;
-}
-
-.product-image img {
-    width: 100%;
-    border-radius: 16px;
-}
-
-.thumbs {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.thumbs img {
-    width: 70px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    transition: border 0.3s ease;
-}
-
-.thumbs img:hover {
-    border-color: var(--primary);
-}
-
-.product-info {
-    flex: 1 1 400px;
-}
-
-.product-info h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.rating span {
-    color: #94a3b8;
+  .hero p {
     font-size: 14px;
-}
+  }
 
-.price {
-    font-size: 28px;
-    color: var(--primary);
-    margin: 15px 0;
+  .contact-bar {
+    flex-direction: column;
+  }
 }
-
-.desc {
-    font-size: 16px;
-    margin-bottom: 15px;
-    color: #475569;
-}
-
-.features li {
-    margin-bottom: 8px;
-    font-weight: 500;
-}
-
-/* SPEC TABLE */
-.specs {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 15px 0;
-}
-
-.specs td {
-    padding: 8px 10px;
-    border: 1px solid #cbd5f5;
-}
-
-.buy-buttons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-.buy-buttons .btn.whatsapp {
-    background: var(--secondary);
-}
-
-/* =========================
-   PRODUCT MODAL
-========================= */
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.7);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    background: var(--card);
-    padding: 30px;
-    border-radius: 20px;
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    animation: pop 0.4s ease;
-}
-
-@keyframes pop {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-.modal-content img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
-
-.close {
-    font-size: 28px;
-    cursor: pointer;
-    float: right;
-}
-
-/* =========================
-   TRUST
-========================= */
-.trust {
-    background: #0a2540;
-    color: white;
-    padding: 60px 0;
-}
-
-.trust-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    text-align: center;
-    gap: 20px;
-    font-weight: 500;
-}
-
-.trust-grid div {
-    background: rgba(255,255,255,0.08);
-    padding: 15px;
-    border-radius: 12px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-.footer {
-    background: #020617;
-    color: #cbd5f5;
-    padding: 40px 0;
-    text-align: center;
-}
-
-.footer h4 {
-    margin-bottom: 10px;
-}
-
-/* =========================
-   WHATSAPP BUTTON
-========================= */
-.whatsapp-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--secondary);
-    color: white;
-    padding: 14px 18px;
-    border-radius: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-    animation: pulse 2s infinite;
-    z-index: 999;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.07); }
-    100% { transform: scale(1); }
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-    .hero-content h2 { font-size: 32px; }
-    .product-detail { flex-direction: column; }
-    .buy-buttons { flex-direction: column; }
-      }

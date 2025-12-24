@@ -1,58 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Products | BagSphere</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BAGSTASH | Products</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
 
-<header class="header">
-  <img src="Images/logo.png" alt="BagSphere Logo" class="logo">
-  <p class="tagline">Trust • Style • Durability</p>
-  <nav class="nav">
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+<h1 class="center">All Products</h1>
 
-<div class="contact-bar">
-  <a href="tel:+918777438644" class="call-btn">📞 Bulk Orders: +91 87774 38644</a>
-  <a href="https://wa.me/916291083811" target="_blank" class="wa-btn">
-    <img src="Images/whatsapp.png" alt="WhatsApp"> Helpline Chat
-  </a>
+<div class="filter">
+  <button onclick="filterProducts('all')">All</button>
+  <button onclick="filterProducts('bag')">Backpacks</button>
+  <button onclick="filterProducts('luggage')">Luggage</button>
 </div>
 
-<section class="products">
-  <h3 class="section-title">All Products</h3>
+<div class="products">
 
-  <!-- Filter Buttons -->
-  <div class="filter-buttons">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="suitcase">Suitcases</button>
-    <button class="filter-btn" data-filter="backpack">Backpacks</button>
+  <div class="product-card bag">
+    <img src="images/backpack1.jpg">
+    <h3>Urban Backpack</h3>
+    <p>₹789</p>
+    <a href="product-backpack1.html" class="btn view">View</a>
   </div>
 
-  <!-- Product Grid -->
-  <div class="product-grid" id="productGrid">
-    <!-- Skeletons -->
-    <div class="product-card skeleton"></div>
-    <div class="product-card skeleton"></div>
-    <div class="product-card skeleton"></div>
-    <div class="product-card skeleton"></div>
-    <!-- Actual products populated by JS -->
+  <div class="product-card luggage">
+    <img src="images/suitcase.jpg">
+    <h3>Hard Trolley Suitcase</h3>
+    <p>₹689</p>
+    <a href="product-suitcase.html" class="btn view">View</a>
   </div>
-</section>
 
-<footer class="footer">
-  <p><strong>BagSphere</strong></p>
-  <p>📦 Bulk Contact: <a href="tel:+918777438644">+91 87774 38644</a></p>
-  <p>💬 WhatsApp Helpline: <a href="https://wa.me/916291083811" target="_blank">+91 62910 83811</a></p>
-  <p>© 2025 BagSphere</p>
-</footer>
+</div>
 
-<script src="script.js"></script>
 </body>
 </html>
